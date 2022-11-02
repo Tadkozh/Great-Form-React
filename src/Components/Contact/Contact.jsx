@@ -1,7 +1,7 @@
 import React from 'react';
 import './Contact.css';
 import {useForm} from 'react-hook-form';
-import * as Yup from 'yup';
+import * as yup from 'yup';
 
 //Installation de 
 // - react-hook-form | npm i react-hook-form
@@ -15,6 +15,30 @@ const Contact = () => {
 // etc
 
   const { register, formState: {errors}, handleSubmit} = useForm
+
+  const schema = yup
+  .object ({
+    name: yup
+    .string()
+    .max(50)
+    .required("Requis : merci de rentrer vos nom et prénom"), // doubles quotes ici : ""
+
+    email: yup
+    .string()
+    .email("Merci de rentrer une adresse email valide")
+    .max(255)
+    .required("Requis : merci de rentrer une adresse mail"),
+
+    phone: yup
+    .number()
+    .typeError("Merci de rentrer un numéro de téléphone valide")
+    .required("Requis : merci de rentrer un numéro de téléphone"),
+
+    message: yup
+    .string()
+    .required("Requis : merci de rentrer un message"),
+  })
+  .required();
 
   return (
     <>
