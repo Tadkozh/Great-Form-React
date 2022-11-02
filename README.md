@@ -8,3 +8,13 @@ https://github.com/Tadkozh/Great-Form
 https://github.com/Tadkozh/Great-Form-React
 + Contact form with React-hook-form and Yup
 (soon in a new branch)
+---
+# TO SEE THIS PROJECT IN ACTION LOCALLY :
++ git clone git@github.com:Tadkozh/Great-Form-React.git
++ npm install
++ npm start
++ enjoy !
+
+![Great-Form-React](src/img/CaptureFormulaire.png)
+---
+See the original README of Create React App : [ReadMeReact.md](./ReadMeReact.md)
