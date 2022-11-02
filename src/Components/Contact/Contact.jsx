@@ -1,12 +1,13 @@
 import React from 'react';
 import './Contact.css';
 import {useForm} from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 //Installation de 
 // - react-hook-form | npm i react-hook-form
 // - @hookform/resolvers | npm i @hookform/resolvers
-// - Yup | npm i yup
+// - yup | npm i yup
 
 const Contact = () => {
 
@@ -14,7 +15,7 @@ const Contact = () => {
 // const [name, setName] = useState(null);
 // etc
 
-  const { register, formState: {errors}, handleSubmit} = useForm
+  const { register, formState: {errors}, handleSubmit} = useForm ({resolver: yupResolver(schema)});
 
   const schema = yup
   .object ({
@@ -34,9 +35,7 @@ const Contact = () => {
     .typeError("Merci de rentrer un numéro de téléphone valide")
     .required("Requis : merci de rentrer un numéro de téléphone"),
 
-    message: yup
-    .string()
-    .required("Requis : merci de rentrer un message"),
+    message: yup.string().required("Requis : merci de rentrer un message"),
   })
   .required();
 
