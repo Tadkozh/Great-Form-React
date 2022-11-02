@@ -3,11 +3,15 @@
 ## Choose your form :
 
 + Contact form on a static html page
-https://github.com/Tadkozh/Great-Form (other repository)
+
+  https://github.com/Tadkozh/Great-Form (other repository)
 + Form on React without a library to retrieve form field states
-https://github.com/Tadkozh/Great-Form-React
+
+  https://github.com/Tadkozh/Great-Form-React
 + Contact form with React-hook-form and Yup
-https://github.com/Tadkozh/Great-Form-React/tree/Reacthookform-Yup
+
+  https://github.com/Tadkozh/Great-Form-React/tree/Reacthookform-Yup
+  
 ---
 # TO SEE THIS PROJECT IN ACTION LOCALLY :
 + git clone git@github.com:Tadkozh/Great-Form-React.git
