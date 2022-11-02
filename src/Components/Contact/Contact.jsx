@@ -15,8 +15,6 @@ const Contact = () => {
 // const [name, setName] = useState(null);
 // etc
 
-  const { register, formState: {errors}, handleSubmit} = useForm ({resolver: yupResolver(schema)});
-
   const schema = yup
   .object ({
     name: yup
@@ -39,11 +37,17 @@ const Contact = () => {
   })
   .required();
 
+  const { register, formState: {errors}, handleSubmit} = useForm ({resolver: yupResolver(schema)});
+
+  const onSubmit = () => {
+    alert('Merci pour votre message')
+  }
+
   return (
     <>
       <h1 className='h1-contact'>Formulaire de contact</h1>
 
-      <form className='contact-form'>
+      <form className='contact-form' onSubmit={handleSubmit(onSubmit)}>
         <div className='form-content'>
           
           <label htmlFor='name' className='label-contact'>Nom et prénom : </label>
