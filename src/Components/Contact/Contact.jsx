@@ -1,9 +1,20 @@
-import React from 'react'
-import './Contact.css'
+import React from 'react';
+import './Contact.css';
+import {useForm} from 'react-hook-form';
+import * as Yup from 'yup';
+
+//Installation de 
+// - react-hook-form | npm i react-hook-form
+// - @hookform/resolvers | npm i @hookform/resolvers
+// - Yup | npm i yup
 
 const Contact = () => {
 
 // On supprime les useState, l'appel à {useState}, les onChange
+// const [name, setName] = useState(null);
+// etc
+
+  const { register, formState: {errors}, handleSubmit} = useForm
 
   return (
     <>
@@ -19,7 +30,8 @@ const Contact = () => {
             id='name' 
             name='name' 
             placeholder='Nom et prénom' 
-            
+            // onChange={(e) => setName(e.target.value)}
+            {...register('name')}
           />
           
           <label htmlFor='email' className='label-contact'>Adresse mail : </label>
@@ -29,7 +41,7 @@ const Contact = () => {
             id='email' 
             name='email' 
             placeholder='machin@truc.com'
-            
+            {...register('email')}
           />
           
           <label htmlFor='phone' className='label-contact'>N° téléphone : </label>
@@ -39,18 +51,22 @@ const Contact = () => {
             id='phone' 
             name='phone' 
             placeholder='01234567'
-            
+            {...register('phone')}
           />
 
           <label htmlFor='Sujet' className='label-contact'>Sujet : </label>
-          <select className='select-contact' name='subject'>
+          <select 
+            className='select-contact' 
+            name='subject'
+            {...register('subject')}
+          >
             <option selected>Sélectionner l'objet de la demande</option>
             <option value='devis'>Devis</option>
             <option value='question'>Question</option>
             <option value='autre'>Autre</option>
           </select>
 
-          <label htmlFor='message' className='label-contact'>Message : </label>
+          <label htmlFor='message' className='label-contact'>{' '} Message : </label>
           <textarea 
             className='message-contact'
             name='message'
@@ -58,7 +74,7 @@ const Contact = () => {
             cols='20'
             rows='10'
             placeholder='Merci de poser vos question ou donner vos commentaire'
-            
+            {...register('message')}
           ></textarea>
 
           <label className='label-contact'>
