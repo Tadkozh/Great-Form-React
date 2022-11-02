@@ -1,7 +1,10 @@
+import Contact from "./Components/Contact/Contact";
+
+
 function App() {
   return (
     <div className="App">
-			Bonjour //pour tester si ça marche
+			<Contact />
     </div>
   );
 }
