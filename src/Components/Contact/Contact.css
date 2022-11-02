@@ -59,3 +59,13 @@ body {
 .button-contact:hover {
   background-color: green;
 }
+
+#c-yup {
+  color: tomato;
+  text-align: center;
+}
+
+#c-yup:before {
+  display:inline;
+  content: '⚠ ';
+}

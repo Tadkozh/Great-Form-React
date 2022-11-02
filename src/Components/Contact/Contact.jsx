@@ -60,6 +60,7 @@ const Contact = () => {
             // onChange={(e) => setName(e.target.value)}
             {...register('name')}
           />
+          {errors.name && <p id='c-yup'>{errors.name.message}</p>}
           
           <label htmlFor='email' className='label-contact'>Adresse mail : </label>
           <input 
@@ -70,6 +71,7 @@ const Contact = () => {
             placeholder='machin@truc.com'
             {...register('email')}
           />
+          {errors.email && <p id='c-yup'>{errors.email.message}</p>}
           
           <label htmlFor='phone' className='label-contact'>N° téléphone : </label>
           <input 
@@ -80,6 +82,7 @@ const Contact = () => {
             placeholder='01234567'
             {...register('phone')}
           />
+          {errors.phone && <p id='c-yup'>{errors.phone.message}</p>}
 
           <label htmlFor='Sujet' className='label-contact'>Sujet : </label>
           <select 
@@ -103,6 +106,7 @@ const Contact = () => {
             placeholder='Merci de poser vos question ou donner vos commentaire'
             {...register('message')}
           ></textarea>
+          {errors.message && <p id='c-yup'>{errors.message.message}</p>}
 
           <label className='label-contact'>
             <input type="checkbox" />En cochant cette case, j'accepte de recevoir des informations sur les différentes offres disponibles.
